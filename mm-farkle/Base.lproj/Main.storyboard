@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,84 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aru-Pf-VLc">
+                                <rect key="frame" x="199" y="80" width="30" height="30"/>
+                                <state key="normal" title="d1"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZG-ih-zzU">
+                                <rect key="frame" x="285" y="80" width="30" height="30"/>
+                                <state key="normal" title="d2"/>
+                                <metadata>
+                                    <string key="libraryAssetSourceID">Xcode.InterfaceBuilderKit.CocoaTouchIntegration.ObjectLibraryAssetProvider:IBUIButton</string>
+                                </metadata>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0TC-tw-6fZ">
+                                <rect key="frame" x="378" y="80" width="30" height="30"/>
+                                <state key="normal" title="d3"/>
+                                <metadata>
+                                    <string key="libraryAssetSourceID">Xcode.InterfaceBuilderKit.CocoaTouchIntegration.ObjectLibraryAssetProvider:IBUIButton</string>
+                                </metadata>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVc-5D-54i">
+                                <rect key="frame" x="199" y="149" width="30" height="30"/>
+                                <state key="normal" title="d4"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0Q-Ox-Kr7">
+                                <rect key="frame" x="285" y="149" width="30" height="30"/>
+                                <state key="normal" title="d5"/>
+                                <metadata>
+                                    <string key="libraryAssetSourceID">Xcode.InterfaceBuilderKit.CocoaTouchIntegration.ObjectLibraryAssetProvider:IBUIButton</string>
+                                </metadata>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7J-Zh-W1h">
+                                <rect key="frame" x="378" y="149" width="30" height="30"/>
+                                <state key="normal" title="d6"/>
+                                <metadata>
+                                    <string key="libraryAssetSourceID">Xcode.InterfaceBuilderKit.CocoaTouchIntegration.ObjectLibraryAssetProvider:IBUIButton</string>
+                                </metadata>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUd-yU-kBn">
+                                <rect key="frame" x="189" y="353" width="50" height="30"/>
+                                <state key="normal" title="Re-Roll"/>
+                                <connections>
+                                    <action selector="onRollPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Psk-df-b49"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9F-5Y-jII">
+                                <rect key="frame" x="376" y="353" width="35" height="30"/>
+                                <state key="normal" title="Keep"/>
+                                <connections>
+                                    <action selector="onKeepPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NgA-Wc-z1j"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEE-oP-ehf">
+                                <rect key="frame" x="199" y="483" width="122" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0X-8N-jcF">
+                                <rect key="frame" x="393" y="483" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="diceView1" destination="Aru-Pf-VLc" id="5A2-PW-egt"/>
+                        <outlet property="diceView2" destination="cZG-ih-zzU" id="jMq-Zp-Ob2"/>
+                        <outlet property="diceView3" destination="0TC-tw-6fZ" id="TFk-Mf-qUa"/>
+                        <outlet property="diceView4" destination="CVc-5D-54i" id="WJA-dI-jYK"/>
+                        <outlet property="diceView5" destination="F0Q-Ox-Kr7" id="3Wd-qz-hYz"/>
+                        <outlet property="diceView6" destination="w7J-Zh-W1h" id="SCo-IQ-OMU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="288" y="292"/>
         </scene>
     </scenes>
 </document>

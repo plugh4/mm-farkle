@@ -13,6 +13,9 @@
 		392F010E1CA496AE00527AF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 392F010C1CA496AE00527AF8 /* Main.storyboard */; };
 		392F01101CA496AE00527AF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 392F010F1CA496AE00527AF8 /* Assets.xcassets */; };
 		392F01131CA496AE00527AF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 392F01111CA496AE00527AF8 /* LaunchScreen.storyboard */; };
+		392F011C1CA4977600527AF8 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 392F011B1CA4977600527AF8 /* GameViewController.m */; };
+		392F011F1CA497A400527AF8 /* Dice.m in Sources */ = {isa = PBXBuildFile; fileRef = 392F011E1CA497A400527AF8 /* Dice.m */; };
+		392F01221CA49F6600527AF8 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 392F01211CA49F6600527AF8 /* Player.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,12 @@
 		392F010F1CA496AE00527AF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		392F01121CA496AE00527AF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		392F01141CA496AE00527AF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		392F011A1CA4977600527AF8 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		392F011B1CA4977600527AF8 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		392F011D1CA497A400527AF8 /* Dice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dice.h; sourceTree = "<group>"; };
+		392F011E1CA497A400527AF8 /* Dice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dice.m; sourceTree = "<group>"; };
+		392F01201CA49F6600527AF8 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		392F01211CA49F6600527AF8 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +71,13 @@
 				392F01071CA496AE00527AF8 /* AppDelegate.m */,
 				392F01091CA496AE00527AF8 /* ViewController.h */,
 				392F010A1CA496AE00527AF8 /* ViewController.m */,
+				392F011A1CA4977600527AF8 /* GameViewController.h */,
+				392F011B1CA4977600527AF8 /* GameViewController.m */,
 				392F010C1CA496AE00527AF8 /* Main.storyboard */,
+				392F01201CA49F6600527AF8 /* Player.h */,
+				392F01211CA49F6600527AF8 /* Player.m */,
+				392F011D1CA497A400527AF8 /* Dice.h */,
+				392F011E1CA497A400527AF8 /* Dice.m */,
 				392F010F1CA496AE00527AF8 /* Assets.xcassets */,
 				392F01111CA496AE00527AF8 /* LaunchScreen.storyboard */,
 				392F01141CA496AE00527AF8 /* Info.plist */,
@@ -149,8 +164,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				392F011F1CA497A400527AF8 /* Dice.m in Sources */,
+				392F011C1CA4977600527AF8 /* GameViewController.m in Sources */,
 				392F010B1CA496AE00527AF8 /* ViewController.m in Sources */,
 				392F01081CA496AE00527AF8 /* AppDelegate.m in Sources */,
+				392F01221CA49F6600527AF8 /* Player.m in Sources */,
 				392F01051CA496AE00527AF8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
