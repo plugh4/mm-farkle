@@ -12,6 +12,8 @@
 
 -(instancetype)initWithName:(NSString *)name
 {
+    NSLog(@"[%@ %@]", self.class, NSStringFromSelector(_cmd));
+
     self = [super init];
     if (self) {
         self.name = name;

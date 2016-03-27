@@ -12,6 +12,7 @@
 
 -(void)roll
 {
+    NSLog(@"[%@ %@]", self.class, NSStringFromSelector(_cmd));
 //    NSLog(@"%@", NSStringFromSelector(_cmd));
 
     // generate random number 1-6

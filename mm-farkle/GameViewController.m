@@ -24,7 +24,7 @@
 
 // data
 @property NSMutableArray *dice;
-@property NSArray *players;
+//@property NSArray *players;
 @property int endScore;
 @property int nTurn;
 
@@ -33,6 +33,8 @@
 @implementation GameViewController
 
 - (void)viewDidLoad {
+    NSLog(@"[%@ %@]", self.class, NSStringFromSelector(_cmd));
+
     [super viewDidLoad];
     
     // UI
@@ -45,35 +47,31 @@
         self.diceView6
     ];
 
-    // players
-    self.players = @[
-        [[Player alloc] initWithName:@"Anne"],
-        [[Player alloc] initWithName:@"Bob"],
-        [[Player alloc] initWithName:@"Chris"],
-        [[Player alloc] initWithName:@"David"]
-    ];
+    // game data
     self.nTurn = 0;
-    
-//    self.dice = @[
-//        [[Dice alloc] init],
-//        [[Dice alloc] init],
-//        [[Dice alloc] init],
-//        [[Dice alloc] init],
-//        [[Dice alloc] init],
-//        [[Dice alloc] init]
-//    ];
+    self.endScore = 10000;
     self.dice = [NSMutableArray new];
     for (int i = 0; i < 6; i++) {
         Dice *d = [[Dice alloc] init];
         [self.dice addObject:d];
     }
+    
+    // debug
+    for (Player *p in self.players) {
+        NSLog(@"received player %@", p.name);
+    }
+//    // players
+//    self.players = @[
+//        [[Player alloc] initWithName:@"Anne"],
+//        [[Player alloc] initWithName:@"Bob"],
+//        [[Player alloc] initWithName:@"Chris"],
+//        [[Player alloc] initWithName:@"David"]
+//    ];
 
-    // gameplay
-    self.endScore = 10000;
 }
 - (IBAction)onRollPressed:(UIButton *)sender
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+    NSLog(@"[%@ %@]", self.class, NSStringFromSelector(_cmd));
 
     // roll all unlocked dice
     NSLog(@"array of %i", self.dice.count);
@@ -98,6 +96,7 @@
 }
 - (IBAction)onKeepPressed:(UIButton *)sender
 {
+    NSLog(@"[%@ %@]", self.class, NSStringFromSelector(_cmd));
 }
 
 
