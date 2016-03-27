@@ -108,58 +108,156 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sIG-Gz-Gt2">
-                                <rect key="frame" x="100" y="104" width="400" height="240"/>
+                                <rect key="frame" x="20" y="104" width="560" height="240"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3W2-zL-jWr">
-                                        <rect key="frame" x="0.0" y="0.0" width="400" height="90"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="90"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aru-Pf-VLc">
-                                                <rect key="frame" x="0.0" y="0.0" width="120" height="90"/>
-                                                <state key="normal" title="d1"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZG-ih-zzU">
-                                                <rect key="frame" x="140" y="0.0" width="120" height="90"/>
-                                                <state key="normal" title="d2"/>
-                                                <metadata>
-                                                    <string key="libraryAssetSourceID">Xcode.InterfaceBuilderKit.CocoaTouchIntegration.ObjectLibraryAssetProvider:IBUIButton</string>
-                                                </metadata>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0TC-tw-6fZ">
-                                                <rect key="frame" x="280" y="0.0" width="120" height="90"/>
-                                                <state key="normal" title="d3"/>
-                                                <metadata>
-                                                    <string key="libraryAssetSourceID">Xcode.InterfaceBuilderKit.CocoaTouchIntegration.ObjectLibraryAssetProvider:IBUIButton</string>
-                                                </metadata>
-                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aoM-y9-W8X">
+                                                <rect key="frame" x="0.0" y="0.0" width="173" height="90"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aru-Pf-VLc">
+                                                        <rect key="frame" x="56" y="15" width="60" height="60"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="dice1">
+                                                            <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                                        </accessibility>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="9CK-Vj-7yD"/>
+                                                            <constraint firstAttribute="width" constant="60" id="NG3-Dq-mT8"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Opb-of-5MC"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="iAO-zf-z1b"/>
+                                                        </constraints>
+                                                        <state key="normal" title="d1" image="dice1"/>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="Opb-of-5MC"/>
+                                                                <exclude reference="iAO-zf-z1b"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="onDicePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1RE-Yb-phV"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="Aru-Pf-VLc" firstAttribute="centerX" secondItem="aoM-y9-W8X" secondAttribute="centerX" id="9BF-1o-JtP"/>
+                                                    <constraint firstItem="Aru-Pf-VLc" firstAttribute="centerY" secondItem="aoM-y9-W8X" secondAttribute="centerY" id="PNE-pQ-3LE"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ew0-IN-A1q">
+                                                <rect key="frame" x="193" y="0.0" width="174" height="90"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rsw-b3-3Xx" userLabel="d2">
+                                                        <rect key="frame" x="57" y="15" width="60" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="1Az-cq-uWn"/>
+                                                            <constraint firstAttribute="width" constant="60" id="GSe-3Q-mI6"/>
+                                                        </constraints>
+                                                        <state key="normal" title="d1" image="dice2"/>
+                                                        <connections>
+                                                            <action selector="onDicePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="517-6y-1Cf"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="Rsw-b3-3Xx" firstAttribute="centerX" secondItem="ew0-IN-A1q" secondAttribute="centerX" id="H45-ar-3gW"/>
+                                                    <constraint firstItem="Rsw-b3-3Xx" firstAttribute="centerY" secondItem="ew0-IN-A1q" secondAttribute="centerY" id="VE5-bK-ojd"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="val-j0-fu4">
+                                                <rect key="frame" x="387" y="0.0" width="173" height="90"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ypi-rz-6nn" userLabel="d3">
+                                                        <rect key="frame" x="57" y="15" width="60" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="60" id="ngY-6k-8c2"/>
+                                                            <constraint firstAttribute="height" constant="60" id="vJv-O4-kxR"/>
+                                                        </constraints>
+                                                        <state key="normal" title="d1" image="dice3"/>
+                                                        <connections>
+                                                            <action selector="onDicePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WVX-FG-Wea"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="Ypi-rz-6nn" firstAttribute="centerX" secondItem="val-j0-fu4" secondAttribute="centerX" id="HOs-3k-hgu"/>
+                                                    <constraint firstItem="Ypi-rz-6nn" firstAttribute="centerY" secondItem="val-j0-fu4" secondAttribute="centerY" id="cwz-eV-MVh"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="MC7-VZ-xqm"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dPP-DC-9qt">
-                                        <rect key="frame" x="0.0" y="110" width="400" height="90"/>
+                                        <rect key="frame" x="0.0" y="110" width="560" height="90"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVc-5D-54i">
-                                                <rect key="frame" x="0.0" y="0.0" width="120" height="90"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sw1-Qq-4Ef">
+                                                <rect key="frame" x="0.0" y="0.0" width="173" height="90"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nku-7B-4ag" userLabel="d4">
+                                                        <rect key="frame" x="56" y="15" width="60" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="X0P-ew-hXy"/>
+                                                            <constraint firstAttribute="width" constant="60" id="YMm-64-3qw"/>
+                                                        </constraints>
+                                                        <state key="normal" title="d1" image="dice4"/>
+                                                        <connections>
+                                                            <action selector="onDicePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0NV-Od-nvu"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="90" id="jGQ-Rj-4W3"/>
+                                                    <constraint firstItem="nku-7B-4ag" firstAttribute="centerX" secondItem="Sw1-Qq-4Ef" secondAttribute="centerX" id="Mwl-hD-sea"/>
+                                                    <constraint firstItem="nku-7B-4ag" firstAttribute="centerY" secondItem="Sw1-Qq-4Ef" secondAttribute="centerY" id="eHV-HA-aFG"/>
                                                 </constraints>
-                                                <state key="normal" title="d4"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0Q-Ox-Kr7">
-                                                <rect key="frame" x="140" y="0.0" width="120" height="90"/>
-                                                <state key="normal" title="d5"/>
-                                                <metadata>
-                                                    <string key="libraryAssetSourceID">Xcode.InterfaceBuilderKit.CocoaTouchIntegration.ObjectLibraryAssetProvider:IBUIButton</string>
-                                                </metadata>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7J-Zh-W1h">
-                                                <rect key="frame" x="280" y="0.0" width="120" height="90"/>
-                                                <state key="normal" title="d6"/>
-                                                <metadata>
-                                                    <string key="libraryAssetSourceID">Xcode.InterfaceBuilderKit.CocoaTouchIntegration.ObjectLibraryAssetProvider:IBUIButton</string>
-                                                </metadata>
-                                            </button>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L1S-Hb-eQO">
+                                                <rect key="frame" x="193" y="0.0" width="174" height="90"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFo-7d-teq" userLabel="d5">
+                                                        <rect key="frame" x="57" y="15" width="60" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="60" id="K1b-Eo-UWq"/>
+                                                            <constraint firstAttribute="height" constant="60" id="Loi-xO-B77"/>
+                                                        </constraints>
+                                                        <state key="normal" title="d1" image="dice5"/>
+                                                        <connections>
+                                                            <action selector="onDicePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mF9-MP-5Vo"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="zFo-7d-teq" firstAttribute="centerY" secondItem="L1S-Hb-eQO" secondAttribute="centerY" id="EXe-8o-czd"/>
+                                                    <constraint firstItem="zFo-7d-teq" firstAttribute="centerX" secondItem="L1S-Hb-eQO" secondAttribute="centerX" id="Nen-f0-a9g"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ud-ar-bIw">
+                                                <rect key="frame" x="387" y="0.0" width="173" height="90"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7y-ve-11v" userLabel="d6">
+                                                        <rect key="frame" x="57" y="15" width="60" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="60" id="1AC-Mj-eDT"/>
+                                                            <constraint firstAttribute="height" constant="60" id="Wjr-rH-UUP"/>
+                                                        </constraints>
+                                                        <state key="normal" title="d1" image="dice6"/>
+                                                        <connections>
+                                                            <action selector="onDicePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fkq-EA-jWX"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="q7y-ve-11v" firstAttribute="centerY" secondItem="9Ud-ar-bIw" secondAttribute="centerY" id="Ely-ks-Y8T"/>
+                                                    <constraint firstItem="q7y-ve-11v" firstAttribute="centerX" secondItem="9Ud-ar-bIw" secondAttribute="centerX" id="teg-MT-crh"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="nQk-gW-wt4"/>
@@ -186,18 +284,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="sIG-Gz-Gt2" secondAttribute="trailing" constant="80" id="akE-e5-KxI"/>
-                            <constraint firstItem="sIG-Gz-Gt2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="80" id="e8L-qb-71e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sIG-Gz-Gt2" secondAttribute="trailing" id="akE-e5-KxI"/>
+                            <constraint firstItem="sIG-Gz-Gt2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="e8L-qb-71e"/>
                             <constraint firstItem="sIG-Gz-Gt2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="z3s-Lu-9aW"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="diceView1" destination="Aru-Pf-VLc" id="5A2-PW-egt"/>
-                        <outlet property="diceView2" destination="cZG-ih-zzU" id="jMq-Zp-Ob2"/>
-                        <outlet property="diceView3" destination="0TC-tw-6fZ" id="TFk-Mf-qUa"/>
-                        <outlet property="diceView4" destination="CVc-5D-54i" id="WJA-dI-jYK"/>
-                        <outlet property="diceView5" destination="F0Q-Ox-Kr7" id="3Wd-qz-hYz"/>
-                        <outlet property="diceView6" destination="w7J-Zh-W1h" id="SCo-IQ-OMU"/>
+                        <outlet property="diceView2" destination="Rsw-b3-3Xx" id="2FX-fs-LWZ"/>
+                        <outlet property="diceView3" destination="Ypi-rz-6nn" id="cTk-yt-Usz"/>
+                        <outlet property="diceView4" destination="nku-7B-4ag" id="fc8-bW-GSr"/>
+                        <outlet property="diceView5" destination="zFo-7d-teq" id="nNe-dz-gTc"/>
+                        <outlet property="diceView6" destination="q7y-ve-11v" id="EuV-Fj-YjJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -223,4 +321,12 @@
             <point key="canvasLocation" x="-287" y="286"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dice1" width="418" height="418"/>
+        <image name="dice2" width="418" height="418"/>
+        <image name="dice3" width="418" height="418"/>
+        <image name="dice4" width="418" height="418"/>
+        <image name="dice5" width="418" height="418"/>
+        <image name="dice6" width="418" height="418"/>
+    </resources>
 </document>

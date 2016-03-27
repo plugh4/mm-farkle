@@ -13,12 +13,9 @@
 -(void)roll
 {
     NSLog(@"[%@ %@]", self.class, NSStringFromSelector(_cmd));
-//    NSLog(@"%@", NSStringFromSelector(_cmd));
 
     // generate random number 1-6
     int x = arc4random_uniform(6) + 1;
     self.value = x;
-
-    //NSLog(@"%@: %i", NSStringFromSelector(_cmd), self.value);
 }
 @end

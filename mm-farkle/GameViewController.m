@@ -69,8 +69,22 @@
 //    ];
 
 }
-- (IBAction)onRollPressed:(UIButton *)sender
-{
+- (void)setDiceFaces {
+    for (int i = 0; i < self.dice.count; i++) {
+        Dice *die = self.dice[i];
+        UIButton *button = self.diceViews[i];
+        
+        // button text
+        NSString *text = [NSString stringWithFormat:@"%i", die.value];
+        [button setTitle:text forState:UIControlStateNormal];
+        
+        // button image
+        NSString *faceImageName = [NSString stringWithFormat:@"dice%i", die.value];
+        UIImage *faceImage = [UIImage imageNamed:faceImageName];
+        button.imageView.image = faceImage;
+    }
+}
+- (IBAction)onRollPressed:(UIButton *)sender {
     NSLog(@"[%@ %@]", self.class, NSStringFromSelector(_cmd));
 
     // roll all unlocked dice
@@ -87,16 +101,14 @@
     }
     
     // refresh UI
-    for (int i = 0; i < self.dice.count; i++) {
-        Dice *die = self.dice[i];
-        UIButton *button = self.diceViews[i];
-        NSString *text = [NSString stringWithFormat:@"%i", die.value];
-        [button setTitle:text forState:UIControlStateNormal];
-    }
+    [self setDiceFaces];
 }
-- (IBAction)onKeepPressed:(UIButton *)sender
-{
+- (IBAction)onKeepPressed:(UIButton *)sender {
     NSLog(@"[%@ %@]", self.class, NSStringFromSelector(_cmd));
+}
+- (IBAction)onDicePressed:(UIButton *)sender {
+    NSLog(@"[%@ %@]", self.class, NSStringFromSelector(_cmd));
+    NSLog(@"dice ID = %@", sender.accessibilityIdentifier);
 }
 
 
