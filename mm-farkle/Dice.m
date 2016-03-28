@@ -8,6 +8,7 @@
 
 #import "Dice.h"
 
+
 @implementation Dice
 
 -(void)roll
@@ -18,4 +19,5 @@
     int x = arc4random_uniform(6) + 1;
     self.value = x;
 }
+
 @end

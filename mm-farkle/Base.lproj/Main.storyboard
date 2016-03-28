@@ -81,20 +81,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUd-yU-kBn">
-                                <rect key="frame" x="189" y="353" width="50" height="30"/>
-                                <state key="normal" title="Re-Roll"/>
-                                <connections>
-                                    <action selector="onRollPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Psk-df-b49"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9F-5Y-jII">
-                                <rect key="frame" x="376" y="353" width="35" height="30"/>
-                                <state key="normal" title="Keep"/>
-                                <connections>
-                                    <action selector="onKeepPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NgA-Wc-z1j"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="J7U-AP-G8D">
+                                <rect key="frame" x="20" y="384" width="560" height="30"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r0H-qC-hf3">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUd-yU-kBn">
+                                                <rect key="frame" x="125" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="Roll"/>
+                                                <connections>
+                                                    <action selector="onRollPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Psk-df-b49"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="aUd-yU-kBn" firstAttribute="centerY" secondItem="r0H-qC-hf3" secondAttribute="centerY" id="1fQ-1w-eKp"/>
+                                            <constraint firstItem="aUd-yU-kBn" firstAttribute="centerX" secondItem="r0H-qC-hf3" secondAttribute="centerX" id="Ryb-HR-xaG"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSO-6Q-HO2">
+                                        <rect key="frame" x="280" y="0.0" width="280" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9F-5Y-jII">
+                                                <rect key="frame" x="123" y="0.0" width="35" height="30"/>
+                                                <state key="normal" title="Keep"/>
+                                                <connections>
+                                                    <action selector="onKeepPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NgA-Wc-z1j"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="W9F-5Y-jII" firstAttribute="centerY" secondItem="tSO-6Q-HO2" secondAttribute="centerY" id="KvT-Ud-vGc"/>
+                                            <constraint firstItem="W9F-5Y-jII" firstAttribute="centerX" secondItem="tSO-6Q-HO2" secondAttribute="centerX" id="VnK-Jz-CkX"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="eL8-Fd-90c"/>
+                                </constraints>
+                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEE-oP-ehf">
                                 <rect key="frame" x="199" y="483" width="122" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -284,6 +312,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="J7U-AP-G8D" secondAttribute="trailing" id="0YS-bI-vTy"/>
+                            <constraint firstItem="J7U-AP-G8D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="TEp-Lg-pV2"/>
+                            <constraint firstItem="J7U-AP-G8D" firstAttribute="top" secondItem="sIG-Gz-Gt2" secondAttribute="bottom" constant="40" id="UXe-l0-o9i"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sIG-Gz-Gt2" secondAttribute="trailing" id="akE-e5-KxI"/>
                             <constraint firstItem="sIG-Gz-Gt2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="e8L-qb-71e"/>
                             <constraint firstItem="sIG-Gz-Gt2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="z3s-Lu-9aW"/>

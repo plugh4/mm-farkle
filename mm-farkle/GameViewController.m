@@ -24,7 +24,8 @@
 
 // data
 @property NSMutableArray *dice;
-//@property NSArray *players;
+
+//@property NSArray *players; // deprecated
 @property int endScore;
 @property int nTurn;
 
@@ -37,30 +38,35 @@
 
     [super viewDidLoad];
     
-    // UI
-    self.diceViews = @[
-        self.diceView1,
-        self.diceView2,
-        self.diceView3,
-        self.diceView4,
-        self.diceView5,
-        self.diceView6
-    ];
 
-    // game data
+    // init game data
     self.nTurn = 0;
     self.endScore = 10000;
+
+    // dice data objects
     self.dice = [NSMutableArray new];
     for (int i = 0; i < 6; i++) {
         Dice *d = [[Dice alloc] init];
         [self.dice addObject:d];
     }
-    
+
+    // dice UI views (buttons)
+    self.diceViews =
+    @[self.diceView1,
+      self.diceView2,
+      self.diceView3,
+      self.diceView4,
+      self.diceView5,
+      self.diceView6
+      ];
+
     // debug
     for (Player *p in self.players) {
-        NSLog(@"received player %@", p.name);
+        NSLog(@"received player %@ from parent VC", p.name);
     }
-//    // players
+
+// deprecated: player list is now passed in from PlayerSelectVC
+// players
 //    self.players = @[
 //        [[Player alloc] initWithName:@"Anne"],
 //        [[Player alloc] initWithName:@"Bob"],
@@ -69,29 +75,47 @@
 //    ];
 
 }
-- (void)setDiceFaces {
+
+// objectForView(): get Dice object corresponding to UIButton
+- (Dice *)objectForView:(UIView *)diceView {
+    NSLog(@"[%@ %@]", self.class, NSStringFromSelector(_cmd));
+    for (int i = 0; i < self.diceViews.count; i++) {
+        if (self.diceViews[i] == diceView) { return self.dice[i]; }
+    }
+    return nil;
+}
+// viewForObject(): get UIButton corresponding to Dice object
+- (UIView *)viewForObject:(Dice *)diceData {
+    NSLog(@"[%@ %@]", self.class, NSStringFromSelector(_cmd));
+    for (int i = 0; i < self.dice.count; i++) {
+        if (self.dice[i] == diceData) { return self.diceViews[i]; }
+    }
+    return nil;
+}
+
+
+// set all button images based on dice.value
+- (void)setAllDiceFaces {
+    NSLog(@"[%@ %@]", self.class, NSStringFromSelector(_cmd));
+    
     for (int i = 0; i < self.dice.count; i++) {
         Dice *die = self.dice[i];
-        UIButton *button = self.diceViews[i];
+        UIButton *button = [self viewForObject:die];
         
-        // button text
-        NSString *text = [NSString stringWithFormat:@"%i", die.value];
-        [button setTitle:text forState:UIControlStateNormal];
-        
-        // button image
+        // use UIButton setImage:forState:
         NSString *faceImageName = [NSString stringWithFormat:@"dice%i", die.value];
         UIImage *faceImage = [UIImage imageNamed:faceImageName];
-        button.imageView.image = faceImage;
+        [button setImage:faceImage forState:UIControlStateNormal];
     }
 }
+
+
 - (IBAction)onRollPressed:(UIButton *)sender {
     NSLog(@"[%@ %@]", self.class, NSStringFromSelector(_cmd));
 
     // roll all unlocked dice
-    NSLog(@"array of %i", self.dice.count);
     for (int i = 0; i < self.dice.count; i++) {
         Dice *die = self.dice[i];
-//    for (Dice *die in self.dice) {
         if (! die.isLocked) {
             NSLog(@"%@ unlocked", die);
             [die roll];
@@ -101,26 +125,22 @@
     }
     
     // refresh UI
-    [self setDiceFaces];
+    [self setAllDiceFaces];
 }
+
 - (IBAction)onKeepPressed:(UIButton *)sender {
     NSLog(@"[%@ %@]", self.class, NSStringFromSelector(_cmd));
+    
+    // TODO
 }
-- (IBAction)onDicePressed:(UIButton *)sender {
+
+- (IBAction)onDicePressed:(UIButton *)button {
     NSLog(@"[%@ %@]", self.class, NSStringFromSelector(_cmd));
-    NSLog(@"dice ID = %@", sender.accessibilityIdentifier);
+
+    // lock die
+    Dice *dice = [self objectForView:button];
+    dice.isLocked = !dice.isLocked;
+    button.backgroundColor = (dice.isLocked) ? [UIColor redColor] : [UIColor clearColor];
 }
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
